@@ -66,7 +66,7 @@ hist(stepsday, xlab = "Steps by day", ylab = "Number of days",
      main = "Frequency of steps by day")
 ```
 
-![](figures/steps per day-1.png)<!-- -->
+![](figures/stepsperday-1.png)<!-- -->
 
 ```r
 ## Calculate the mean
@@ -101,7 +101,7 @@ da <- ggplot(dailyactivity, aes(x = interval, steps))
     theme(plot.title = element_text(hjust = 0.5))
 ```
 
-![](figures/average daily activity-1.png)<!-- -->
+![](figures/averagedailyactivity-1.png)<!-- -->
 
 ```r
 ## Which 5-minute interval, contains the maximum number of steps? 
@@ -139,7 +139,7 @@ hist(stepsdaynona, xlab = "Steps by day", ylab = "Number of days",
      main = "Frequency of steps by day")
 ```
 
-![](figures/missing values-1.png)<!-- -->
+![](figures/missingvalues-1.png)<!-- -->
 
 ```r
 ## Calculate and report the mean and median total number of steps taken per day
