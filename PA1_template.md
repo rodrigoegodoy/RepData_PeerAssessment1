@@ -6,47 +6,45 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/")
 ```
 
-First load the packages needed to do the analysis  
-
+First load the packages needed to do the analysis
 ```{r load packages, echo = FALSE}
 library(dplyr)
 library(ggplot2)
 ```
 
-## Download, unzip  and read the file  
+Download, unzip  and read the file
 ```{r download and unzip}
-zip <- "Factivity.zip"
+zip <- "activity.zip"
 
 if (!file.exists(zip)){
     fileurl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
     download.file(fileurl, zip, method = "curl")
 }        
 
-if(!file.exists("Factivity")) {
-    unzip(zip, exdir = "./Factivity")
+if(!file.exists("activity")) {
+    unzip(zip)
 } 
 
-setwd("./Factivity")
-
- ## Read the file  
+## Read the file
 activity <- read.csv("activity.csv")
-```  
+```
+
 ## What is mean total number of steps taken per day?
 
 ```{r steps per day}
- ## Change the date variable to a "Date" class
+## Change the date variable to a "Date" class
 activity$date <- as.Date(as.character(activity$date, "%Y-%m-%d"))
- ## Sum the number of steps taken by day
+## Sum the number of steps taken by day
 stepsday <- tapply(activity$steps, activity$date, sum)
- ## Plot the histogram showing the number of steps taken each day
+## Plot the histogram showing the number of steps taken each day
 hist(stepsday, xlab = "Steps by day", ylab = "Number of days",
      main = "Frequency of steps by day")
- ## Calculate the mean
+## Calculate the mean
 mean(stepsday, na.rm = TRUE)
- ## Calculate the median
+## Calculate the median
 median(stepsday, na.rm = TRUE)
 ```
 
