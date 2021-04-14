@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/")
+knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/", include=TRUE)
 ```
 
 First load the packages needed to do the analysis
