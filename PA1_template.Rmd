@@ -42,6 +42,7 @@ stepsday <- tapply(activity$steps, activity$date, sum)
 ## Plot the histogram showing the number of steps taken each day
 hist(stepsday, xlab = "Steps by day", ylab = "Number of days",
      main = "Frequency of steps by day")
+knitr::include_graphics('figures/steps per day-1.png')
 ## Calculate the mean
 mean(stepsday, na.rm = TRUE)
 ## Calculate the median
