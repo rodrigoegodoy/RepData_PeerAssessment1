@@ -5,7 +5,7 @@ date: "14/04/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/")
 ```
 
